@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* when the className is dark */
+.container.dark{
+  background-color:#e3f9ff;
+}
+.calculator.dark{
+  background-color:#093b67;
+}
+.calculator form input.dark{
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* when the className is light */
+.container.light{
+  background-color:#093b67 ;
+}
+.calculator.light{
+  background-color:#c1d3e3;
+}
+.calculator form input.light{
+  color: #100f0f;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+
+#themeicon{
+   cursor: pointer;
+}
+
+
+.container{
+  width: 100%;
+  height: 100vh;
+ 
+  background:#e3f9ff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator{
+  /* background: #3a4452; */
+  background: var(--secondary-color);
+  /* background: #154c79; */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator form input{
+  border: 0;
+  outline: 0;
+  /*All inputinum same width and height kodukkanam to display it in square shape */
+  width: 60px; 
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1),5px 5px 15px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  font-size: 20px;
+
+  color:var(--tertiary-color);
+  cursor: pointer;
+  /* margin: 10px; to give space between all input buttons */
+  margin: 10px; 
+}
+
+form .display{
+  /*Give display:flex; to the parent div of input tag */
+  display: flex;
+  /* justify-content: flex-end; to align the child item to right  */
+  justify-content: flex-end;
+  margin: 20px 0;
+
+}
+form .display input{
+  text-align: right;
+  /* By using flex: 1; on a flex item (a child element within a flex container), you essentially tell it to take up all available space along the main axis and distribute any extra space proportionally among all the flex items with a flex value of 1 .*/
+  /* ith kodukkunath kond ee input box space full eduth nikkum */
+  flex: 1;
+  font-size: 45px;
+  box-shadow: none;
+}
+form input.equal{
+  width: 145px;
+
 }
